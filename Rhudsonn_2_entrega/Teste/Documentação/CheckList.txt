@@ -1,0 +1,10 @@
+Aula 5 de teste...
+
+Como usar um teste com mais de um parâmetro [ ].
+
+Fazer o Desafio...
+- Desafio: frete orientado por dados [ ].
+
+Entrega... 
+- Ava [ ].
+- Repository - GitHub [ ].

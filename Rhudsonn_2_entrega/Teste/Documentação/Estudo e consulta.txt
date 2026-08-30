@@ -1,0 +1,75 @@
+@ParameterizedTest
+- Substitui @Testum método que deve ser executado uma vez por conjunto de argumentos. Deve ser combinado com uma anotação de origem (como as abaixo) que fornece os dados.
+_______________________________________
+@ParameterizedTest
+@ValueSource(ints = {1, 2, 3})
+void isPositive(int number) {
+    assertTrue(number > 0);
+}
+________________________________________
+
+Você precisa adicionar essa junit-jupiter-paramsdependência ao seu classpath.
+
+
+@ValueSource
+- Fornece um único array de valores literais — um por invocação de teste. Suporta int, long, double, String, boolean, Class, etc. (apenas um tipo por anotação).
+________________________________________
+@ParameterizedTest
+@ValueSource(strings = {"racecar", "level", "noon"})
+void isPalindrome(String word) {
+    assertTrue(isPalindrome(word));
+}
+__________________________________________
+Use-o quando precisar apenas de uma lista simples com um único argumento.
+
+
+@CsvSource
+- Fornece múltiplos argumentos por invocação como valores separados por vírgula, diretamente na anotação. Ideal para pequenas tabelas de entradas/saídas esperadas relacionadas.
+__________________________________________
+@ParameterizedTest
+@CsvSource({
+    "1, 1, 2",
+    "2, 3, 5",
+    "10, -5, 5"
+})
+void add(int a, int b, int expected) {
+    assertEquals(expected, a + b);
+}
+___________________________________________
+Você também pode usar delimiterpara alterar o separador e @CsvFileSourcese desejar que os dados estejam em um .csvarquivo externo em vez de embutidos.
+
+
+@MethodSource
+- Aponta para um método estático que retorna um conjunto de argumentos, como Stream, List, Iterable, etc. Use-o quando os dados forem muito complexos/dinâmicos para literais — objetos, valores computados, casos extremos extraídos da lógica.
+____________________________________________
+@ParameterizedTest
+@MethodSource("provideNumbers")
+void isEven(int number, boolean expected) {
+    assertEquals(expected, number % 2 == 0);
+}
+
+static Stream<Arguments> provideNumbers() {
+    return Stream.of(
+        Arguments.of(2, true),
+        Arguments.of(3, false),
+        Arguments.of(0, true)
+    );
+}
+_____________________________________________
+Regras:
+
+O método deve ser static(a menos que a classe de teste use @TestInstance(Lifecycle.PER_CLASS)).
+Se o nome do método corresponder ao método de teste, você pode omitir o valor: apenas @MethodSource.
+Retorna um valor Arguments.of(...)ao passar múltiplos parâmetros; um simples ` Stream<Integer>if`, por exemplo, funciona bem para um único parâmetro.
+
+
+
+Comparação rápida
+Anotação	              Ideal para	                             Localização dos dados
+
+@ValueSource	        Argumento primitivo único/String	             Em linha, literal
+@CsvSource	        Vários argumentos simples por caso	             Em linha, literal
+@MethodSource	        Argumentos complexos/dinâmicos/objetos	             Método Java
+
+
+
