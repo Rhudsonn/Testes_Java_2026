@@ -1,7 +1,9 @@
 # Aula 05 — Testes Parametrizados com JUnit 5
 
 **Unidade curricular:** Teste de Sistemas  
+
 **Carga horária:** 4 horas  
+
 **Tema central:** executar a mesma regra de teste com diferentes conjuntos de dados
 
 ---

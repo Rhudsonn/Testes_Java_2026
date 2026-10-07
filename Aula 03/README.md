@@ -1,8 +1,10 @@
 # Aula 03 — Primeiros Testes com JUnit 5
 
 **Módulo:** 2 — JUnit 5 na Prática
+
 **Carga horária:** 4 horas
-**Professor(a):** [Nome/@handle da turma]
+
+**Professor(a):** @karizeviecelli
 
 ---
 

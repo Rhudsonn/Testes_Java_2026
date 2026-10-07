@@ -1,9 +1,10 @@
 # Aula 04 — Asserções e o padrão AAA
 
 **Módulo:** 2 — JUnit 5 na Prática
-**Carga horária:** 4 horas
-**Professor(a):** [Nome/@handle da turma]
 
+**Carga horária:** 4 horas
+
+**Professor(a):** @karizeviecelli
 ---
 
 ## 🎯 Objetivos da aula

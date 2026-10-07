@@ -1,9 +1,10 @@
 # Aula 01 — Fundamentos de Teste de Software + Revisão de POO
 
 **Módulo:** 1 — Fundamentos
-**Carga horária:** 4 horas
-**Professor(a):** [Nome/@handle da turma]
 
+**Carga horária:** 4 horas
+
+**Professor(a):** @karizeviecelli
 ---
 
 ## 🎯 Objetivos da aula
